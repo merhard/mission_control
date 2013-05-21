@@ -4,6 +4,10 @@ class MissionControlCommand
   end
 
   def output
-    'You are checked in'
+    if @cmd == 'in'
+      'You are checked in'
+    else
+      'You are checked out'
+    end
   end
 end

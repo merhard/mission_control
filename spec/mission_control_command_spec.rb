@@ -7,4 +7,11 @@ describe MissionControlCommand do
     cmd = MissionControlCommand.new('in')
     expect(cmd.output).to include('You are checked in')
   end
+
+  it 'acknowledges my check out' do
+    cmd = MissionControlCommand.new('out')
+    expect(cmd.output).to include('You are checked out')
+  end
+
+
 end
