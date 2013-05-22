@@ -4,7 +4,7 @@ require 'time'
 require_relative '../lib/mission_control_command'
 
 describe MissionControlCommand do
- 
+
 
   context 'checking in' do
     let(:cmd) {cmd = MissionControlCommand.new('in')}
@@ -49,7 +49,7 @@ describe MissionControlCommand do
       if FileTest.exists?(check_in_path)
         FileUtils.rm(check_in_path)
       end
-      expect(cmd.output).to include("#{Time.now.hour}:#{Time.now.min}")
+      expect(cmd.output).to include("#{Time.now.strftime('%l:%M %p')}")
     end
 
   end
